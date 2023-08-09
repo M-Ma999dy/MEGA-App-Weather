@@ -43,7 +43,7 @@ async function getWeatherData(currentCity){
     currentCity = 'Alexandria'
   }
 
-  let apiResponse = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=cbeef6e5429845fa8a8153816220402&q=${currentCity}&days=3`)
+  let apiResponse = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=cbeef6e5429845fa8a8153816220402&q=${currentCity}&days=3`)
   
   let responseData= await apiResponse.json()
   
