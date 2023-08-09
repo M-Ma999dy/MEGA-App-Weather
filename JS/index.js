@@ -86,7 +86,7 @@ async function getWeatherData(currentCity){
 
                     <p class="fs-4 my-3"><span class="text-info"><i class="fa-solid fa-location-crosshairs me-2"></i> </span>${responseData.location.region}</p>
 
-                    <p class="fs-4 my-3"><span class="text-info"><i class="fa-solid fa-location-dot me-2"></i> </span>${responseData.location.tz_id}</p>
+                    <p class="fs-4 my-3"><span class="text-info"><i class="fa-solid fa-location-dot me-2"></i> </span>${responseData.location.country}</p>
 
                 </div>        
 
