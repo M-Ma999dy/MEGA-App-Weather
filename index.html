@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Eng: Mohamed Magdy Mettwally">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This Site just For Training on Use HTML , CSS , Bootstrap , JS , Call API">
+    <meta name="keywords" content="HTML CSS SASS Bootstrap JS TS Angular2 Coding Developers Front-End">
+
+    <title>Weather</title>
+    <meta property="og:image" content="./src/Images/Logo-MM-Cover.jpg">
+    <link rel="website icon" type="PNG" href="./src/Images/Logo-MM-Title.png">
+
+    <link href="CSS/bootstrap.min.css" rel="stylesheet" />
+    <link href="CSS/all.min.css" rel="stylesheet" />
+    <link href="CSS/index.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <!---------------------------------------------------------------------------------------------------------------------------->
+    <!---------------------------------------------------------------------------------------------------------------------------->
+    <!-- Loader -->
+    <!------------>
+
+    <div id="myLoading">
+
+        <!---------------------------------------------------------------->
+
+        <div id="loadingDiv" class="d-flex justify-content-center align-items-center">
+            <div id="loaderDiv" class="loader--style6" title="5">
+                <svg id="loaderSize" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="30px"
+                    viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                    <rect x="0" y="13" width="4" height="5" fill="blue">
+                        <animate attributeName="height" attributeType="XML" values="5;21;5" begin="0s" dur="0.6s"
+                            repeatCount="indefinite" />
+                        <animate attributeName="y" attributeType="XML" values="13; 5; 13" begin="0s" dur="0.6s"
+                            repeatCount="indefinite" />
+                    </rect>
+                    <rect x="10" y="13" width="4" height="5" fill="white">
+                        <animate attributeName="height" attributeType="XML" values="5;21;5" begin="0.15s" dur="0.6s"
+                            repeatCount="indefinite" />
+                        <animate attributeName="y" attributeType="XML" values="13; 5; 13" begin="0.15s" dur="0.6s"
+                            repeatCount="indefinite" />
+                    </rect>
+                    <rect x="20" y="13" width="4" height="5" fill="blue">
+                        <animate attributeName="height" attributeType="XML" values="5;21;5" begin="0.3s" dur="0.6s"
+                            repeatCount="indefinite" />
+                        <animate attributeName="y" attributeType="XML" values="13; 5; 13" begin="0.3s" dur="0.6s"
+                            repeatCount="indefinite" />
+                    </rect>
+                </svg>
+            </div>
+        </div>
+
+        <!---------------------------------------------------------------->
+
+    </div>
+
+    <!---------------------------------------------------------------------------------------------------------------------------->
+    <!---------------------------------------------------------------------------------------------------------------------------->
+    <!-- Navbar -->
+    <!------------>
+
+    <nav class="navbar navbar-dark bg-black position-fixed fixed-top justify-content-between align-items-center">
+
+        <a class="navbar-brand d-flex justify-content-center align-items-center ps-5"
+            href="https://eng-m-ma9dy.github.io/MAGDY/" target="_blank">
+
+            <img src="./src/Images/logo.png" alt="logo">
+            <h3 class="mx-2 my-0">Weather</h3>
+        </a>
+
+        <ul class="d-flex justify-content-center align-items-center pe-5">
+            <li><a class="mx-2 text-decoration-none text-info fs-4 m-0" href="#home">Home</a></li>
+            <li><a class="mx-2 text-decoration-none text-white fs-4 m-0 d-none d-sm-block" href="#contact">Contact</a></li>
+        </ul>
+
+    </nav>
+
+    <!---------------------------------------------------------------------------------------------------------------------------->
+    <!---------------------------------------------------------------------------------------------------------------------------->
+    <!-- Home -->
+    <!------------>
+
+    <main id="home" class="py-5">
+        
+        <div class="container-lg px-4 px-lg-0 d-flex flex-column justify-content-center">
+
+            <form class="mt-5 mb-xl-5 p-1">
+                <input type="search" onkeyup="getWeatherData(this.value)" class="form-control rounded-4 bg-black text-white border border-2 border-info w-75 mx-auto" placeholder="Find Your Location...">
+                
+                <p id="warning" class="text-danger w-75 mx-auto p-2 fs-5 d-none"></p>
+            </form>
+
+
+            <div id="apiContent" class="row ">
+
+            </div>
+
+        </div>
+        
+    </main>
+
+  <!---------------------------------------------------------------------------------------------------------------------------->
+  <!---------------------------------------------------------------------------------------------------------------------------->
+  <!-- Footer -->
+  <!------------>
+
+  <footer id="contact" class="py-5 bg-black text-white">
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-md-6 col-xl-3 my-3 my-lg-0">
+
+          <h4 class="mb-4 pb-4 border-bottom">Author :</h4>
+
+          <h1>M O H A M E D</h1>
+
+          <h1>M A G D Y</h1>
+
+        </div>
+
+        <div class="col-md-6 col-xl-3 my-3 my-lg-0">
+
+          <h4 class="mb-4 pb-4 border-bottom">Contact :</h4>
+
+          <h6><a href="mailto:Eng.M.Ezzeldeen@gmail.com" class="a_None text-white">Email:
+              Eng.M.Ezzeldeen@gmail.com</a></h6>
+
+          <button class="bg-transparent text-white border-0 p-0" onclick="openLink('wa.me/+201285880488')">
+            <h6 class="mb-0">Phone : +20 12 858 80 4 88</h6>
+          </button>
+
+          <div class="d-flex justify-content-start my-3">
+
+            <button onclick="openLink('github.com/Eng-M-Ma9dy')"
+              class="SM-BTN-icon GitHub    me-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+              <i class="fa-brands fa-github"></i>
+            </button>
+
+            <button onclick="openLink('www.linkedin.com/in/eng-m-ma9dy/')"
+              class="SM-BTN-icon LinkedIn  mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+              <i class="fa-brands fa-linkedin"></i>
+            </button>
+
+            <button onclick="openLink('www.facebook.com/eng.m.ma9dy/')"
+              class="SM-BTN-icon Facebook  mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+              <i class="fa-brands fa-facebook"></i>
+            </button>
+
+            <button onclick="openLink('www.instagram.com/eng.m.ma9dy/')"
+              class="SM-BTN-icon Instagram ms-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+              <i class="fa-brands fa-instagram"></i>
+            </button>
+
+          </div>
+
+        </div>
+
+        <div class="col-md-6 col-xl-3 my-3 my-lg-0">
+
+          <h4 class="mb-4 pb-4 border-bottom">My Pages :</h4>
+
+          <h6><a href="mailto:Info.Unit.Alex@gmail.com" class="a_None text-white">Info.Unit.Alex@gmail.com</a>
+          </h6>
+
+          <button class="bg-transparent text-white border-0 p-0" onclick="openLink('wa.me/+201140155633')">
+            <h6 class="mb-0">Phone : +20 11 40 155 6 33</h6>
+          </button>
+
+          <div class="text-light d-flex justify-content-start my-3">
+
+            <button onclick="openLink('www.facebook.com/info.unit.iu/')"
+              class="SM-BTN-icon Facebook  me-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+              <i class="fa-brands fa-facebook"></i>
+            </button>
+
+            <button onclick="openLink('www.tiktok.com/@info.unit.iu')"
+              class="SM-BTN-icon TikTok    mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+              <i class="fa-brands fa-tiktok"></i>
+            </button>
+
+            <button onclick="openLink('www.instagram.com/info.unit.iu')"
+              class="SM-BTN-icon Instagram mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+              <i class="fa-brands fa-instagram"></i>
+            </button>
+
+            <button onclick="openLink('youtube.com/@Info.Unit-IU')"
+              class="SM-BTN-icon Youtube   ms-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+              <i class="fa-brands fa-youtube"></i>
+            </button>
+
+          </div>
+
+        </div>
+
+        <div class="col-md-6 col-xl-3 mt-3 mt-lg-0 d-none d-md-flex justify-content-start justify-content-xl-center">
+
+          <button class="bg-transparent text-white border-0 p-0"
+            onclick="openLink('eng-m-ma9dy.github.io/MAGDY/')"><img src="src/Images/Logo-MM.jpg"
+              class="footer_logo rounded-circle" alt=""></button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <!---------------------------------------------------------------------------------------------------------------------------->
+  <!---------------------------------------------------------------------------------------------------------------------------->
+  <!-- JS Links -->
+  <!-------------->
+
+  <!-- Offline Bootstrap js : -->
+  <script src="JS/bootstrap.bundle.min.js"></script>
+
+  <!-- jquery js : -->
+  <script src="JS/jquery-3.6.3.min.js"></script>
+
+  <!-- My js : -->
+  <script src="JS/index.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+*{
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+/* ----------------------------------------------------------------------------- */
+/* Loader ---------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------- */
+
+body{
+    scroll-behavior: smooth;
+    overflow: hidden;
+    margin: 0;
+  }
+    
+#myLoading{
+  background-color: black;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: fixed;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999999999999999999;
+}
+
+#loaderDiv{
+  margin: 0 0 2em;
+  width: 20%;
+  text-align: center;
+  padding: 1em;
+  margin: 0 auto 1rem;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#loaderSize{
+  transform: scale(3);
+}
+
+/* ----------------------------------------------------------------------------- */
+/* Home ------------------------------------------------------------------------ */
+/* ----------------------------------------------------------------------------- */
+
+#home {
+    font-family: "Roboto", "Open Sans", sans-serif;
+    background-image: url(../src/Images/BG.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    font-style: normal;
+    color: white;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+
+.temp-card {
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 500px;
+}
+
+/* ----------------------------------------------------------------------------- */
+/* Footer ---------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------- */
+
+.footer_logo{
+    width: 200px;
+    height: 200px;
+    transition: all 0.5s;
+    border: solid black 1px;
+}
+
+.footer_logo:hover{
+    border: solid blueviolet 10px;
+}
+
+/* ----------------------------------------------------------------------------- */
+/* Shared ---------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------- */
+
+.mainColor{
+    background-color: #2f90bd;
+}
+
+.Pointer{
+    cursor: pointer;
+}
+
+.a_None{
+    text-decoration: none;
+}
+
+.SM-BTN-icon{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: solid black 3px;
+    transition: transform 0.75s;
+}
+.SM-BTN-icon:hover{
+    border: solid white 2px;
+    transform: scale(1.25);
+}
+
+.GitHub{
+    color: black;
+}
+
+.LinkedIn{
+    color: #0366C3;
+}
+
+.Facebook{
+    color: #1877F2;
+}
+
+.Twitter{
+    color: #1877F2;
+}
+
+.Instagram{
+    color: #E8067F;
+}
+
+.Youtube{
+    color: red;
+}
+
+.TikTok{
+    color: black;
+}
