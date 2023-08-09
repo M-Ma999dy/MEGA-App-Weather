@@ -6,8 +6,6 @@
 
 window.addEventListener("load",function(){
    
-  getWeatherData();
-
   $("#loaderDiv").fadeOut(1000,function(){
 
     $("#myLoading").remove()
@@ -266,6 +264,7 @@ async function getWeatherData(currentCity){
   
 }
 
+getWeatherData();
 
 
 
