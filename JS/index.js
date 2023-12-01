@@ -32,6 +32,56 @@ function getDayName(date = new Date(), locale = 'en-US') {
 
 let weekDays = ["Saturday","Sunday","Monday","Tuesday","Wednesday","Thursday","Friday"];
 
+let theDayIndex = weekDays.indexOf(getDayName());
+
+let theNextDayIndexCalc
+
+let theNextAfterDayIndexCalc
+
+function findNextDay(){
+
+  let teNextDayIndex = theDayIndex+1
+
+  if (teNextDayIndex >= weekDays.length) {
+
+    theNextDayIndexCalc = teNextDayIndex -7
+    
+  }else{
+
+    theNextDayIndexCalc = teNextDayIndex
+
+  }
+
+}
+
+findNextDay()
+
+let nextDay = weekDays[theNextDayIndexCalc]
+
+console.log(nextDay);
+
+function findAfterNextDay(){
+
+  let teNextAfterDayIndex = theDayIndex+2
+
+  if (teNextAfterDayIndex >= weekDays.length) {
+
+    theNextAfterDayIndexCalc = teNextAfterDayIndex -7
+    
+  }else{
+
+    theNextAfterDayIndexCalc = teNextAfterDayIndex
+
+  }
+
+}
+findAfterNextDay()
+
+let afterNextDay = weekDays[theNextAfterDayIndexCalc]
+
+console.log(afterNextDay);
+
+
 /* ----------------------------------------------------------------------------- */
 /* ----------------------------------------------------------------------------- */
 /* ----------------------------------------------------------------------------- */
@@ -146,7 +196,7 @@ async function getWeatherData(currentCity){
 
       <div class="mainColor p-3 d-flex justify-content-between">
 
-        <p class="fs-5 m-0">${weekDays[weekDays.indexOf(getDayName())+1]}</p>
+        <p class="fs-5 m-0">${nextDay}</p>
 
         <p class="fs-5 m-0">${responseData.forecast.forecastday[1].date}</p>
 
@@ -206,7 +256,7 @@ async function getWeatherData(currentCity){
 
       <div class="mainColor p-3 d-flex justify-content-between">
 
-        <p class="fs-5 m-0">${weekDays[weekDays.indexOf(getDayName())+2]}</p>
+        <p class="fs-5 m-0">${afterNextDay}</p>
 
         <p class="fs-5 m-0">${responseData.forecast.forecastday[2].date}</p>
 
@@ -265,26 +315,3 @@ async function getWeatherData(currentCity){
 }
 
 getWeatherData();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
