@@ -10,4 +10,4 @@
 #
 # Website Link :
 ------------------------
-- https://m-ma999dy.github.io/MEGA-AppWeather/
+- https://m-ma999dy.github.io/MEGA-App-Weather/
